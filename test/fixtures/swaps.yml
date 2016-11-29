@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  location: MyText
+  when: 2016-11-29 10:31:45
+  swap_description: MyText
+
+two:
+  location: MyText
+  when: 2016-11-29 10:31:45
+  swap_description: MyText

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @swap.location %>
+</p>
+
+<p>
+  <strong>When:</strong>
+  <%= @swap.when %>
+</p>
+
+<p>
+  <strong>Swap description:</strong>
+  <%= @swap.swap_description %>
+</p>
+
+<%= link_to 'Edit', edit_swap_path(@swap) %> |
+<%= link_to 'Back', swaps_path %>
