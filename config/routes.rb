@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :wish_lists
+  resources :items
   resources :users
   resources :memberships
   resources :swaps
