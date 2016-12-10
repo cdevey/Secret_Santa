@@ -17,6 +17,11 @@ class SwapsController < ApplicationController
     @swap = Swap.new
   end
 
+#trying to make the path to add a swap
+#  def add
+#    @swap = Swap.add
+#  end
+
   # GET /swaps/1/edit
   def edit
   end

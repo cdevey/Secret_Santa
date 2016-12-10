@@ -1,4 +1,10 @@
 <h1>Home</h1>
-<p>"Welcome </p> <%= {@user.first_name} %> <p>!</p>
+<p> Hello user name that we cannot access </p>
 <br>
-<p> You are part of xxxx-number of swaps:</p>
+<p> You are part of the below swaps. Click a swap to see more info.</p>
+<br>
+<p> Create a swap to make a swap. Join a swap to add yourself to any swaps that either you or your friends have created. </p>
+    <%= link_to '<button type="button">Create a Swap</button>'.html_safe, new_swap_path %>
+<br>
+<br>
+  <%= link_to '<button type="button">Add yourself to a Swap</button>'.html_safe, new_membership_path %>
