@@ -24,8 +24,5 @@ class LoginController < ApplicationController
     redirect_to home_path
   end
 
-  def new_user
-    session[:user_id]= nil
-    redirect_to new_user_path
-  end
+
 end

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   get 'logout' => 'login#logout', as: :logout
 
-  get 'users/new' => 'login#new_user', as: :new_user
+  
 
   get '/' => 'home#index', as: :home
   root 'home#index'
