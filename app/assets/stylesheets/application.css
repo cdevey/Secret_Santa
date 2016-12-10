@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+ div.sidebar{
+     float: right;
+     width: 33%;
+     padding: 10px;
+     background-color: #efefef;
+ } 

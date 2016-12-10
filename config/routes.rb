@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+  get 'login' => 'login#index', as: :login
+
+  post 'login' => 'login#authenticate', as: :authenticate
+
+  get 'logout' => 'login#logout', as: :logout
+
+  get 'users/new' => 'login#new_user', as: :new_user
+
+  get '/' => 'home#index', as: :home
+  root 'home#index'
+
   resources :wish_lists
   resources :items
   resources :users

@@ -8,7 +8,19 @@
 </head>
 <body>
 
+  <div id="primary">
+     <% if flash[:message] %>
+     <p class="flash-message"><%= flash[:message] %></p>
+     <% end %>
+    </div>
+    
+<%= render "layouts/sidebar" %>
+
+<main>
 <%= yield %>
+</main>
+
+<%= render 'layouts/footer' %>
 
 </body>
 </html>
