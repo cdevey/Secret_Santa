@@ -15,5 +15,11 @@
   <%= @swap.swap_description %>
 </p>
 
+<%= render 'userlist' %>
+
+<%= button_to "Assign Recipients", autoassign_swap_path(@swap)%>
+
+<%= render 'recipient' %>
+
 <%= link_to 'Edit', edit_swap_path(@swap) %> |
 <%= link_to 'Back', swaps_path %>

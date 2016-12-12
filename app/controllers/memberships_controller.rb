@@ -1,4 +1,4 @@
-class MembershipsController < ApplicationController
+class MembershipsController < ProtectedController
   before_action :set_membership, only: [:show, :edit, :update, :destroy]
 
   # GET /memberships
@@ -19,10 +19,7 @@ class MembershipsController < ApplicationController
   # GET /memberships/new
   def new
     @membership = Membership.new
-#  def to_s
-    @user = User.find(session[:user_id])
 
-#  end
 
   end
 
@@ -34,6 +31,7 @@ class MembershipsController < ApplicationController
   # POST /memberships.json
   def create
     @membership = Membership.new(membership_params)
+    @membership.user = @current_user
 
     respond_to do |format|
       if @membership.save
@@ -78,6 +76,6 @@ class MembershipsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def membership_params
-      params.require(:membership).permit(:swap_id, :user_id)
+      params.require(:membership).permit(:swap_id)
     end
 end

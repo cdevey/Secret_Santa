@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   get 'logout' => 'login#logout', as: :logout
 
-  
+
 
   get '/' => 'home#index', as: :home
   root 'home#index'
@@ -14,7 +14,11 @@ Rails.application.routes.draw do
   resources :items
   resources :users
   resources :memberships
-  resources :swaps
+  resources :swaps do
+    member do
+      post "autoassign"
+    end
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

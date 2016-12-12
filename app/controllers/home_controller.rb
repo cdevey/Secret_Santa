@@ -1,6 +1,5 @@
-class HomeController < ApplicationController
+class HomeController < ProtectedController
   def index
-    @user = User.find(session[:user_id])
-#    @memberships = Memberships.find(:user_id==@user)
+    @swaps = @current_user.swaps
   end
 end

@@ -1,5 +1,6 @@
-class SwapsController < ApplicationController
-  before_action :set_swap, only: [:show, :edit, :update, :destroy]
+class SwapsController < ProtectedController
+  before_action :set_swap, only: [:show, :edit, :update, :destroy, :autoassign]
+  before_action :require_ownership, only: [:new, :create, :update, :edit, :destroy]
 
   # GET /swaps
   # GET /swaps.json
@@ -10,11 +11,19 @@ class SwapsController < ApplicationController
   # GET /swaps/1
   # GET /swaps/1.json
   def show
+    @users = @swap.users
+    @recipient = Recipient.find_by(swap_id: @swap.id, user_id: @current_user)
   end
 
   # GET /swaps/new
   def new
     @swap = Swap.new
+  end
+
+  def autoassign
+    #arp will do this
+    flash[:message]= "Recipients have been assigned"
+    redirect_to swap_path(@swap)
   end
 
 #trying to make the path to add a swap

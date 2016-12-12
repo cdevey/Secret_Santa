@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161209224519) do
+ActiveRecord::Schema.define(version: 20161212224930) do
 
   create_table "items", force: :cascade do |t|
     t.text     "item_description"
@@ -33,6 +33,18 @@ ActiveRecord::Schema.define(version: 20161209224519) do
 
   add_index "memberships", ["swap_id"], name: "index_memberships_on_swap_id"
   add_index "memberships", ["user_id"], name: "index_memberships_on_user_id"
+
+  create_table "recipients", force: :cascade do |t|
+    t.integer  "swap_id"
+    t.integer  "user_id"
+    t.integer  "recipient_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "recipients", ["recipient_id"], name: "index_recipients_on_recipient_id"
+  add_index "recipients", ["swap_id"], name: "index_recipients_on_swap_id"
+  add_index "recipients", ["user_id"], name: "index_recipients_on_user_id"
 
   create_table "swaps", force: :cascade do |t|
     t.text     "location"
