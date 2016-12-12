@@ -3,6 +3,44 @@
 <br>
 <p> You are part of the below swaps. Click a swap to see more info.</p>
 <br>
+
+<!--<% if @user_id %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@membership.errors.count, "error") %> prohibited this membership from being saved:</h2>
+
+    <ul>
+    <% @membership.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+-->
+
+<!--
+<p><%= @membership %>!!</p>
+-->
+
+<!--<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Swap</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @memberships.each do |membership| %>
+      <tr>
+        <td><%= membership.user %></td>
+        <td><%= membership.swap %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+-->
+
+<br>
 <p> Create a swap to make a swap. Join a swap to add yourself to any swaps that either you or your friends have created. </p>
     <%= link_to '<button type="button">Create a Swap</button>'.html_safe, new_swap_path %>
 <br>
