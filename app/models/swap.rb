@@ -8,7 +8,7 @@ has_many :users, through: :memberships
   end
 
   validates :location, :when, :swap_description, presence: true
-  validates :user, uniqueness: true
+  
 
 
 end
