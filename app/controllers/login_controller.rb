@@ -21,7 +21,7 @@ class LoginController < ApplicationController
   def logout
     session[:user_id] = nil
     flash[:message] = "You have been logged out"
-    redirect_to home_path
+    redirect_to login_path
   end
 
 

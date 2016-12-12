@@ -5,7 +5,11 @@ class MembershipsController < ApplicationController
   # GET /memberships.json
   def index
     @memberships = Membership.all
+    @user = User.find(session[:user_id])
   end
+
+
+
 
   # GET /memberships/1
   # GET /memberships/1.json
@@ -15,6 +19,11 @@ class MembershipsController < ApplicationController
   # GET /memberships/new
   def new
     @membership = Membership.new
+#  def to_s
+    @user = User.find(session[:user_id])
+
+#  end
+
   end
 
   # GET /memberships/1/edit
