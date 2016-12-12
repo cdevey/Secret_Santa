@@ -13,9 +13,36 @@
  *= require_tree .
  *= require_self
  */
+
  div.sidebar{
      float: right;
      width: 33%;
      padding: 10px;
-     background-color: #efefef;
- } 
+     background-color: lightgreen;
+     color: white;
+ }
+
+ body {
+    background-image: url("/assets/images/background-trees.jpg");
+    background-color: lightgreen;
+}
+
+main {
+    background-color: lightgreen;
+}
+
+div.footer{
+    background-color: red;
+    width: 100%;
+  }
+
+h1 {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    color: red;
+    height: 40px;
+    background-color: lightgreen;
+}
+
+p {
+    color: darkgreen;
+}
