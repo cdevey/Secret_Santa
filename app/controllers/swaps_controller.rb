@@ -21,7 +21,18 @@ class SwapsController < ProtectedController
   end
 
   def autoassign
-    #arp will do this
+    current_recipient_ids = [0]
+    @swap.users.uniq.each do | user |
+      puts "getting person for #{user}"
+      available_recipients = @swap.users.where("users.id <> ? AND users.id NOT IN (?)", user.id, current_recipient_ids)
+      puts "found recipients:: #{available_recipients.inspect}"
+      puts "current recipients are #{current_recipient_ids}"
+      r = Recipient.create!(swap: @swap, user: user, recipient: available_recipients.sample) if available_recipients.any?
+      current_recipient_ids << r.recipient_id
+
+
+    end
+
     flash[:message]= "Recipients have been assigned"
     redirect_to swap_path(@swap)
   end
