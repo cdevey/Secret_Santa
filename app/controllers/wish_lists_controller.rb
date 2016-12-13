@@ -1,4 +1,4 @@
-class WishListsController < ApplicationController
+class WishListsController < ProtectedController
   before_action :set_wish_list, only: [:show, :edit, :update, :destroy]
 
   # GET /wish_lists
