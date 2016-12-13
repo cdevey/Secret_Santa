@@ -1,10 +1,12 @@
 class WishListsController < ProtectedController
   before_action :set_wish_list, only: [:show, :edit, :update, :destroy]
 
+
   # GET /wish_lists
   # GET /wish_lists.json
   def index
     @wish_lists = WishList.all
+    @user = User.find(session[:user_id])
   end
 
   # GET /wish_lists/1
@@ -25,6 +27,7 @@ class WishListsController < ProtectedController
   # POST /wish_lists.json
   def create
     @wish_list = WishList.new(wish_list_params)
+    @wish_list.user = @current_user
 
     respond_to do |format|
       if @wish_list.save
@@ -69,6 +72,6 @@ class WishListsController < ProtectedController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def wish_list_params
-      params.require(:wish_list).permit(:user_id, :item_id)
+      params.require(:wish_list).permit(:item_id)
     end
 end

@@ -7,7 +7,8 @@
 
 <p>
   <strong>Item:</strong>
-  <%= @wish_list.item %>
+  <%= @wish_list.item_id %>
+  <!--had to change above from item to item_id-->
 </p>
 
 <%= link_to 'Edit', edit_wish_list_path(@wish_list) %> |
