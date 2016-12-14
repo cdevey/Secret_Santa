@@ -1,5 +1,5 @@
 <h1>Home</h1>
-<p> Hello <%= @current_user %>!! </p>
+<p id=welcome> Hello <%= @current_user %>!! </p>
 <br>
 <p> You are part of the below swaps. Click a swap to see more info.</p>
     <% @swaps.each do |swap| %>
@@ -23,7 +23,7 @@
   <p> Click the buttons below to view your wishlist or add items to your wishlist for the holidays! </p>
   <%= button_to 'View your wishlist', wish_lists_path, method: :get %>
   <br><br>
-  <%= button_to 'Add items to your wishlist', new_wish_list_path, method: :get %>
 
-  <br><br>
-  <%= button_to 'Add items', new_item_path, method: :get %>
+  <%= button_to 'Add items to your wishlist', new_wish_list_path, method: :get %><br>
+<%= button_to 'Add items', new_item_path, method: :get %>
+<br>
