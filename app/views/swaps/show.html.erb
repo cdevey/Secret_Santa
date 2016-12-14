@@ -15,13 +15,30 @@
   <%= @swap.swap_description %>
 </p>
 
+  <p>
+  <strong>Users in this Swap:</strong><br>
+    <% @swap.users.each do |user| %>
+      <%= user.first_name %>
+      <%= user.last_name %>
+      <%= link_to 'Show', user %><br>
+    <% end %>
+  </p>
 
-<%= render 'userlist' %> <br> <br>
+<!-- render 'userlist'  <br> <br> !-->
 
-
-<%= button_to "Assign Recipients", autoassign_swap_path(@swap)%>
+<p>Click this button when everyone in your swap has joined to assign Secret Santas! <br>
+   Each user will be able to see their assigned person when they log into the app.</p>
+<%= button_to "Assign Secret Santas", autoassign_swap_path(@swap)%>
 
 <%= render 'recipient' %>
+
+
+    <strong>Your recipient's wishlist:</strong><br>
+      <% @recipient.wishlist.each do |item| %>
+        <%= item.description %>
+        <%= item.link %>
+        <br>
+      <% end %>
 
 <%= link_to 'Edit', edit_swap_path(@swap) %> |
 <%= link_to 'Back', swaps_path %>

@@ -17,7 +17,7 @@
         <!--had to change above from item to item_id-->
         <td><%= link_to 'Show', wish_list %></td>
         <td><%= link_to 'Edit', edit_wish_list_path(wish_list) %></td>
-        <td><%= link_to 'Destroy', wish_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', wish_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,4 @@
 <%= link_to 'New Wish list', new_wish_list_path %>
 
 <br><br>
-<%= button_to 'Go to your Home page', home_path, method: :get %>
+<%= button_to 'Go to your Home page', home_path, method: :get %><br>

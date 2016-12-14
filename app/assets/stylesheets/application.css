@@ -18,31 +18,45 @@
      float: right;
      width: 33%;
      padding: 10px;
-     background-color: lightgreen;
+     background-color: darkgreen;
+     height: 100%;
      color: white;
+
  }
 
+ link{
+   color: white
+ }
+
+
  body {
-    background-image: url("/assets/images/background-trees.jpg");
-    background-color: lightgreen;
+    background-image: url("plain_green_background.jpg");
+    background-color: green;
 }
 
 main {
-    background-color: lightgreen;
+    background-color: darkgreen;
+    width: 60%;
 }
 
 div.footer{
     background-color: red;
-    width: 100%;
+    background-image: url("lights_footer_2.jpg");
+    width: 60%;
+    height: 30px;
   }
 
 h1 {
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-    color: red;
+    color: white;
     height: 40px;
-    background-color: lightgreen;
+    background-color: red;
 }
 
 p {
-    color: darkgreen;
+    color: white;
+}
+
+p#welcome{
+    font-size: 150%;
 }

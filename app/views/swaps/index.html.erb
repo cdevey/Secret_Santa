@@ -15,12 +15,12 @@
   <tbody>
     <% @swaps.each do |swap| %>
       <tr>
+        <td><%= swap.swap_description %></td>
         <td><%= swap.location %></td>
         <td><%= swap.when %></td>
-        <td><%= swap.swap_description %></td>
         <td><%= link_to 'Show', swap %></td>
         <td><%= link_to 'Edit', edit_swap_path(swap) %></td>
-        <td><%= link_to 'Destroy', swap, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', swap, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
