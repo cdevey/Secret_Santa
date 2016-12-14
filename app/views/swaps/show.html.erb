@@ -42,3 +42,9 @@
 
 <%= link_to 'Edit', edit_swap_path(@swap) %> |
 <%= link_to 'Back', swaps_path %>
+
+<ul>
+  <% @swap.recipients.each do | recipient | %>
+    <li><%= recipient.user %> => <%= recipient.recipient %></li>
+  <% end %>
+</ul>

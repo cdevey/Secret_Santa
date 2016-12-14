@@ -21,7 +21,28 @@ class SwapsController < ProtectedController
   end
 
   def autoassign
-    #arp will do this
+    # create an empty list of current recipients. adding id of 0 for sql
+    current_recipient_ids = [0]
+
+    # loop through all swap users
+    @swap.users.uniq.each do | user |
+
+      # puts "getting person for #{user}"
+
+      # pick out all available users (not the current user in list and not yet assigned)
+      available_recipients = @swap.users.where("users.id <> ? AND users.id NOT IN (?)", user.id, current_recipient_ids)
+
+      # puts "found recipients:: #{available_recipients.inspect}"
+      # puts "current recipients are #{current_recipient_ids}"
+
+      # if a user if found, create the recipient with current user in the loop
+      r = Recipient.create!(swap: @swap, user: user, recipient: available_recipients.sample) if available_recipients.any?
+      # add this recipient to the array so they don't get chosen again
+      current_recipient_ids << r.recipient_id
+
+
+    end
+
     flash[:message]= "Recipients have been assigned"
     redirect_to swap_path(@swap)
   end
