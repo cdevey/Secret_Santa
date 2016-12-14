@@ -30,13 +30,14 @@
 
 main {
     background-color: darkgreen;
-    width: 60%
+    width: 60%;
 }
 
 div.footer{
     background-color: red;
-    background-image: url("lights_footer_2.png");
-    width: 100%;
+    background-image: url("lights_footer_2.jpg");
+    width: 60%;
+    height: 30px;
   }
 
 h1 {
@@ -48,4 +49,8 @@ h1 {
 
 p {
     color: white;
+}
+
+p#welcome{
+    font-size: 150%;
 }
