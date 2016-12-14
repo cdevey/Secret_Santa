@@ -4,6 +4,7 @@ has_many :memberships
 has_many :users, through: :memberships
 
 validates :location, :when, :swap_description, presence: true
+validates :users, uniqueness: true
 
 
   def to_s
