@@ -32,5 +32,13 @@
 
 <%= render 'recipient' %>
 
+
+    <strong>Your recipient's wishlist:</strong><br>
+      <% @recipient.wishlist.each do |item| %>
+        <%= item.description %>
+        <%= item.link %>
+        <br>
+      <% end %>
+
 <%= link_to 'Edit', edit_swap_path(@swap) %> |
 <%= link_to 'Back', swaps_path %>
