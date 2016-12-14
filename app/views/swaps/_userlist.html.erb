@@ -1,2 +1,7 @@
 <!--Get list of users within each swap to appear -->
-<%= @users %>
+
+<% @swap.users.each do |user| %>
+  <%= user.first_name %>
+  <%= user.last_name %>
+  <%= link_to 'Show', user %><br>
+<% end %>
