@@ -19,13 +19,17 @@
      width: 33%;
      padding: 10px;
      background-color: darkgreen;
-     height: 100%;
+     min-height: 60px;
      color: white;
 
  }
 
- link{
+ a{
    color: white
+ }
+
+ a:visited{
+   color: #ececec
  }
 
 

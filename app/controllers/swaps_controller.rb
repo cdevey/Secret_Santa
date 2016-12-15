@@ -63,6 +63,9 @@ class SwapsController < ProtectedController
   def create
     puts ">> #{@swa}"
     @swap = Swap.new(swap_params)
+    @owner = @current_user
+    @swap.users << @current_user
+    @swap.memberships.first.update(owner:true)
 
     respond_to do |format|
       if @swap.save

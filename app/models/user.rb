@@ -4,8 +4,12 @@ class User < ActiveRecord::Base
   has_many :swaps, through: :memberships
   has_many :items
 
-  def to_s
+  def full_name
     "#{first_name} #{last_name}"
+  end
+
+  def to_s
+    full_name
   end
 
 

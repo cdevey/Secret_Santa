@@ -21,10 +21,11 @@
 
 
  <%= render 'userlist' %> <br> <br>  </p>
-
+<% if @swap.is_owner?(@current_user) %>
 <p>Click this button when everyone in your swap has joined to assign Secret Santas! <br>
    Each user will be able to see their assigned person when they log into the app.</p>
 <%= button_to "Assign Secret Santas", autoassign_swap_path(@swap)%>
+<%end%>
 
 <h3>Your Recipient!</h3>
 <%= render 'recipient' %>

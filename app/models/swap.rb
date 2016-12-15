@@ -5,11 +5,13 @@ has_many :users, through: :memberships
 has_many :recipients
 
 validates :location, :when, :swap_description, presence: true
-# validates :users, uniqueness: true << this doesn't work
-
 
   def to_s
     "#{swap_description}"
   end
+
+def is_owner?(user)
+  memberships.where(user: user, owner: true).any?
+end
 
 end
