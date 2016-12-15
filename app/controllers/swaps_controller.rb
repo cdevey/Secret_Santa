@@ -13,6 +13,7 @@ class SwapsController < ProtectedController
   def show
     @users = @swap.users
     @recipient = Recipient.find_by(swap_id: @swap.id, user_id: @current_user)
+    puts @recipient.inspect
   end
 
   # GET /swaps/new
@@ -23,7 +24,7 @@ class SwapsController < ProtectedController
   def autoassign
     # create an empty list of current recipients. adding id of 0 for sql
     current_recipient_ids = [0]
-
+    @swap.recipients. destroy_all
     # loop through all swap users
     @swap.users.uniq.each do | user |
 
@@ -37,8 +38,9 @@ class SwapsController < ProtectedController
 
       # if a user if found, create the recipient with current user in the loop
       r = Recipient.create!(swap: @swap, user: user, recipient: available_recipients.sample) if available_recipients.any?
+      puts "r is #{r.inspect}"
       # add this recipient to the array so they don't get chosen again
-      current_recipient_ids << r.recipient_id
+      current_recipient_ids << r.recipient_id if r
 
 
     end
@@ -59,6 +61,7 @@ class SwapsController < ProtectedController
   # POST /swaps
   # POST /swaps.json
   def create
+    puts ">> #{@swa}"
     @swap = Swap.new(swap_params)
     @owner = @current_user
     @swap.users << @current_user

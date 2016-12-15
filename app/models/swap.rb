@@ -6,8 +6,6 @@ has_many :recipients
 
 validates :location, :when, :swap_description, presence: true
 
-
-
   def to_s
     "#{swap_description}"
   end
@@ -15,6 +13,5 @@ validates :location, :when, :swap_description, presence: true
 def is_owner?(user)
   memberships.where(user: user, owner: true).any?
 end
-
 
 end
