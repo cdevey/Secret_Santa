@@ -14,16 +14,31 @@
  *= require_self
  */
 
+table{
+  color: white;
+}
+
+strong{
+  color: white;
+}
+ul{
+  color: white;
+}
+
  div.sidebar{
      float: right;
      width: 33%;
      padding: 10px;
-     background-color: darkgreen;
+     background: rgba(0, 100, 0, 0.7);
+     font-weight: bold;
      min-height: 60px;
      color: white;
-
  }
 
+ div.navigation{
+   text-align: center;
+   background: rgba(255, 0, 0, 0.7);
+ }
  a{
    color: white
  }
@@ -34,17 +49,16 @@
 
 
  body {
-    background-image: url("plain_green_background.jpg");
-    background-color: green;
+    background-image: url("snazzy_green_background.png");
 }
 
 main {
-    background-color: darkgreen;
+    background: rgba(0, 100, 0, 0.7);
     width: 60%;
 }
 
 div.footer{
-    background-color: red;
+    background: rgba(0, 100, 0, 0.7);
     background-image: url("lights_footer_2.jpg");
     width: 60%;
     height: 30px;
@@ -54,7 +68,7 @@ h1 {
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
     color: white;
     height: 40px;
-    background-color: red;
+    background: rgba(255, 0, 0, 0.7);
 }
 
 p {

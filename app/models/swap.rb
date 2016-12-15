@@ -6,6 +6,8 @@ has_many :recipients
 
 validates :location, :when, :swap_description, presence: true
 
+#scope :upcoming, -> {where(:swap.when= after today}
+
   def to_s
     "#{swap_description}"
   end

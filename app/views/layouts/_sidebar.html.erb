@@ -1,11 +1,13 @@
 <div class="sidebar">
-  <div class="right">
+  <div class="navigation">
+    Navigation
+  </div>
       <% if session[:user_id] %>
         <%= link_to "Logout", logout_path %>
       <% else %>
         <%= link_to "Login", login_path %>
       <% end %>
-    </div>
+    <br>
     <br>
     <%= link_to 'Home', home_path, method: :get %>
 

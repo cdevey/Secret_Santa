@@ -11,4 +11,5 @@ class Membership < ActiveRecord::Base
     @user
   end
 
+  #scope :owner, -> {:swap, :user}
 end
