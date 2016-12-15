@@ -12,14 +12,10 @@
     <%= link_to 'Home', home_path, method: :get %>
 
 
-    <div class="side_wishlist">
-
-    </div>
-
     <h3>Your Recipient!</h3>
 
-    <div class="render">
-      <%= render 'recipient' %>
+    <div class="side_wishlist">
+      <%= render 'recipient' if @current_user%>
     </div>
 
 
