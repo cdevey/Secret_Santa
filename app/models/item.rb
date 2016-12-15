@@ -3,5 +3,8 @@ class Item < ActiveRecord::Base
 
   validates :item_description, :link, presence: true
 
+def description
+  item_description
+end
 
 end
