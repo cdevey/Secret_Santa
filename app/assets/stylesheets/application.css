@@ -14,6 +14,10 @@
  *= require_self
  */
 
+div.render{
+  color: white;
+}
+
 table{
   color: white;
 }
@@ -21,6 +25,7 @@ table{
 strong{
   color: white;
 }
+
 ul{
   color: white;
 }
@@ -36,9 +41,9 @@ ul{
  }
 
  div.navigation{
-   text-align: center;
    background: rgba(255, 0, 0, 0.7);
  }
+
  a{
    color: white
  }
@@ -46,7 +51,6 @@ ul{
  a:visited{
    color: #ececec
  }
-
 
  body {
     background-image: url("snazzy_green_background.png");
@@ -69,6 +73,11 @@ h1 {
     color: white;
     height: 40px;
     background: rgba(255, 0, 0, 0.7);
+}
+
+h3 {
+  color: white;
+  background: rgba(255, 0, 0, 0.7);
 }
 
 p {

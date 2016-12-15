@@ -27,12 +27,8 @@
 <%= button_to "Assign Secret Santas", autoassign_swap_path(@swap)%>
 <%end%>
 
-<h3>Your Recipient!</h3>
-<%= render 'recipient' %>
 
-
-<h3>Your recipient's wishlist:</h3>
-<%= render 'swapmembers' if @recipient%>
+<br>
 
 <%= link_to 'Edit', edit_swap_path(@swap) %> |
 <%= link_to 'Back', swaps_path %>

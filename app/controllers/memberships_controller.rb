@@ -19,8 +19,8 @@ class MembershipsController < ProtectedController
   # GET /memberships/new
   def new
     @membership = Membership.new
-
-
+    @owner_list = Membership.owner_list
+  
   end
 
   # GET /memberships/1/edit

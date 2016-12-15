@@ -1,7 +1,7 @@
 <div class="sidebar">
-  <div class="navigation">
-    Navigation
-  </div>
+
+  <h3> Navigation </h3>
+
       <% if session[:user_id] %>
         <%= link_to "Logout", logout_path %>
       <% else %>
@@ -10,6 +10,24 @@
     <br>
     <br>
     <%= link_to 'Home', home_path, method: :get %>
+
+
+    <div class="side_wishlist">
+
+    </div>
+
+    <h3>Your Recipient!</h3>
+
+    <div class="render">
+      <%= render 'recipient' %>
+    </div>
+
+
+    <h3>Your recipient's wishlist:</h3>
+
+    <div class="render">
+      <%= render 'swapmembers' if @recipient%>
+    </div>
 
 
 </div>
