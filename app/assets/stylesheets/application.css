@@ -63,16 +63,17 @@ main {
 
 div.footer{
     background: rgba(0, 100, 0, 0.7);
-    background-image: url("lights_footer_2.jpg");
     width: 60%;
-    height: 30px;
+    height: 40px;
+    background-image: url("snow_pattern.jpg");
+
   }
 
 h1 {
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
     color: white;
     height: 40px;
-    background: rgba(255, 0, 0, 0.7);
+    background-image: url("snow_pattern");
 }
 
 h3 {
