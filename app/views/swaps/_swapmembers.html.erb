@@ -1,5 +1,5 @@
-<% @recipient.items.each do |item| %>
-  <%= item.description %>
+<% @recipient.user.items.each do |item| %>
+  <%= item.item_description %>
   <%= item.link %>
   <br>
 <% end %>
