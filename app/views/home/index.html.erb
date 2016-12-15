@@ -1,26 +1,26 @@
 <h1>Home</h1>
 <p id=welcome> Hello <%= @current_user %>!! </p>
 <br>
-<p> You are part of the below swaps. Click a swap to see more info.</p>
+<p> You are part of the following swaps. Click to see more info.</p>
     <% @swaps.each do |swap| %>
         <p><%= link_to swap.swap_description, swap_path(swap) %></p>
     <% end %>
 
-
-
 <br>
+
 <% if @current_user.organizer %>
-  <p> Create a swap to make a swap. </p>
+  <p> Want to start your own swap? </p>
   <%= button_to 'Create a Swap', new_swap_path, method: :get %>
 <%end%>
 
 <br>
- <p>Join a swap to add yourself to any swaps that either you or your friends have created. </p>
-<br>
+
+ <p> Join a swap with your friends! </p>
+
   <%= button_to 'Add yourself to a Swap', new_membership_path, method: :get %>
 
   <br>
-  <p> Click the buttons below to view your wishlist or add items to your wishlist for the holidays! </p>
+  <p> Click one of the buttons below to view your wishlist or add items to your wishlist for the holidays! </p>
 <%= button_to 'Add items', new_item_path, method: :get %>
 <br>
 <%= button_to 'View your items', items_path, method: :get %>

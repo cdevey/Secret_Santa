@@ -11,19 +11,4 @@
     <br>
     <%= link_to 'Home', home_path, method: :get %>
 
-
-    <h3>Your Recipient!</h3>
-
-    <div class="side_wishlist">
-      <%= render 'recipient' if @current_user%>
-    </div>
-
-
-    <h3>Your recipient's wishlist:</h3>
-
-    <div class="render">
-      <%= render 'swapmembers' if @recipient%>
-    </div>
-    
-
 </div>
