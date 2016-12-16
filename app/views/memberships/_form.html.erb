@@ -16,6 +16,7 @@
     <%= f.collection_select :swap_id, Swap.all, :id, :swap_description, prompt:true %>
   </div>
 
+  <!-- could call @swap_owners here & loop through each one to display first name & last name of the owner for each swap !-->
 
   <div class="actions">
     <%= f.submit %>

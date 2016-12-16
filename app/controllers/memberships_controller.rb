@@ -20,7 +20,7 @@ class MembershipsController < ProtectedController
   def new
     @membership = Membership.new
     @owner_list = Membership.owner_list
-  
+
   end
 
   # GET /memberships/1/edit
@@ -32,7 +32,7 @@ class MembershipsController < ProtectedController
   def create
     @membership = Membership.new(membership_params)
     @membership.user = @current_user
-
+    #we would set a variable here like @swap_owners= @swaps.owner using the scope created in the membership model
     respond_to do |format|
       if @membership.save
         format.html { redirect_to @membership, notice: 'Membership was successfully created.' }
